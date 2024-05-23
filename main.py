@@ -40,6 +40,7 @@ class MyGUI(QMainWindow):
                 #for each file name a 'QStandardItem' is created with the param as a file and then added to the QstandardItemModel 
                 #named 'listModel' using appendRow
                 self.listModel.appendRow(QStandardItem(file))
+        #this will present the data in listView (in our gui) from the listModel 
         self.listView.setModel(self.listModel)
 
  
@@ -50,6 +51,9 @@ class MyGUI(QMainWindow):
             if self.addPrefixRadio.isChecked():
                 #adding a prefix to start of file name
                 os.rename(os.path.join(self.directory, filename), os.path.join(self.directory, self.nameEdit.text() + filename))
+            #removing file(s) from the directory
+            elif self.deleteRadioButton.isChecked():
+                os.remove(os.path.join(self.directory, filename))
             #removing a prefix from start of file name
             elif self.removePrefixRadio.isChecked():
                 if filename.startswith(self.nameEdit.text()):
@@ -79,7 +83,7 @@ class MyGUI(QMainWindow):
                 print("Select a radio button")
             
             self.selected = []
-            self.selectModel .clear()
+            self.selectModel.clear()
             self.listModel.clear()
             
             for file in os.listdir(self.directory):
