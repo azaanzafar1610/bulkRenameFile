@@ -213,7 +213,7 @@
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>600</y>
+      <y>650</y>
       <width>341</width>
       <height>41</height>
      </rect>
@@ -225,6 +225,21 @@
     </property>
     <property name="text">
      <string>Apply</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nameEdit">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>590</y>
+      <width>551</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
     </property>
    </widget>
   </widget>
